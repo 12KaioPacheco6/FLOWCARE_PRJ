@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body {
+    background-color: #fdfdfd;
+  }
+  
+  header {
+    background-color: #f8d2c2;
+    padding: 10px;
+    position: relative;
+  }
+
+  .imagem-logo {
+    width: 25px;
+    height: 50px;
+    margin-right: 1px;
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .tab {
+    background-color: #e89b89;
+    padding: 6px 12px;
+    margin: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .tab.active {
+    background-color: #d17264;
+  }
+  
+  .container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .left-section {
+    flex: 3;
+    background-color: #f1a791;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .submenu {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .submenu button {
+    background-color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+  }
+  
+  .item {
+    background-color: #ffdfd5;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .item img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  
+  .right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .promo img,
+  .banner img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .grid {
+    margin-top: 15px;
+  }
+  
