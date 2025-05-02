@@ -9,65 +9,47 @@
 </head>
 
 <body>
-  <header class="topbar">
-
+  <nav class="topbar">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <div class="imagem-logo"> 
-                <a><img src="../imagens/imagem-heard/Captura de tela 2025-01-20 193259.png"></a>
-            </div>
-            <nav class="navbar bg-body-tertiary">
-                <div class="container-fluid">
-                  <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="busque seu produto" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form>
-                </div>
-              </nav> 
-
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Cabelo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">maquiagem</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">perfumes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">marcas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">bodysplash</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">óleo de cabelo</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown link
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="../imagens/imagem-heard/Captura de tela 2025-01-20 193259.png" alt="Bootstrap" width="160" height="50">
+          </a>
         </div>
       </nav>
+      <nav class="navbar bg-body-tertiary">
+        <div class="mb-3">
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="encontre seu produto">
+        </div>
+        <div class="nav-cadastro">  
+          <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="#">cadastrar produto</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">sacola</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">meus favoritos</a></li>
+          </ul>
+        </div>
+      </nav> 
+      </nav>
+    </nav>
   </header>
 
   <main class="content">
+    <div class="nav-principal">
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Autocuidado</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Perfumaria</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Make</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Cabelos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">SkingCare</a></li>
+      </ul>
+    </div>
+      
     <div class="grid">
         <!-- Repita este item várias vezes conforme a imagem -->
-        <div class="item"><img src="https://via.placeholder.com/80" alt="Produto"></div>
+        <div class="item">
+          <img src="https://via.placeholder.com/80" alt="Produto"></div>
         <!-- Adicione mais produtos aqui -->
         <!-- Você pode duplicar esse bloco 30x por exemplo -->
         <!-- Exemplo básico com 8 produtos -->
@@ -81,15 +63,6 @@
       </div>
     </div>
 
-    <aside class="sidebar">
-      <div class="side-image">
-        <img src="https://via.placeholder.com/150x200" alt="Side banner">
-        <p>Texto promocional</p>
-      </div>
-      <div class="side-banner">
-        <img src="https://via.placeholder.com/200x100" alt="Banner">
-      </div>
-    </aside>
   </main>
 </body>
 </html>

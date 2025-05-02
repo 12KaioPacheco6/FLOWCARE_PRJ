@@ -43,6 +43,11 @@
   .tab.active {
     background-color: #d17264;
   }
+
+  .nav-item{
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
   
   .container {
     display: flex;
@@ -107,5 +112,44 @@
   
   .grid {
     margin-top: 15px;
+  }
+
+  .menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #f5bca9;
+    flex-wrap: wrap;
+  }
+  
+  /* Centraliza o menu principal */
+  .nav-principal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Alinha o menu de cadastro à direita */
+  .nav-cadastro {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  
+  /* Estilos comuns */
+  .nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
   }
   
