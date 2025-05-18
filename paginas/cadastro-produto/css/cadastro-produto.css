@@ -35,19 +35,21 @@ nav a {
 .user-bar {
     font-size: 14px;
     text-align: right;
+    color: black;
+    text-shadow: 5px black;
 }
 
 main {
     display: flex;
-    padding: 20px;
+    margin: auto;
+    width: 80%;
 }
 
 .cadastro-form {
     background-color: white;
-    padding: 20px;
     border-radius: 8px;
-    width: 90%;
-    margin: 10PX;
+    width: 95%;
+    margin: 10px;
 }
 
 .cadastro-form h2 {
@@ -103,16 +105,18 @@ aside img {
 }
 
 .opcoes-categorias{
-    margin-top: 10px;
+    margin-top: 5px;
+    text-align: center;
+    padding: 15px;
 }
 
 input[name="titulo"], [name="local-compra"], [name="descricao"]{
-    margin-right: -10px;
+    margin: 10px;
 }
 
 .label-produto-lado{
     margin-left: 10px;
-    max-width: 100px;
+    
 }
 
 .nav-item {
@@ -142,3 +146,7 @@ input[name="titulo"], [name="local-compra"], [name="descricao"]{
     border-bottom-right-radius: 5px;
 }
 
+.select-categorias {
+    height: 165px;
+    width: 50px;
+}
