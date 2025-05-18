@@ -95,8 +95,24 @@ aside img {
     border-radius: 8px;
 }
 
-.label-produto{
+.form-produto{
+    width: 80%;
+    margin: 5px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.opcoes-categorias{
+    margin-top: 10px;
+}
+
+input[name="titulo"], [name="local-compra"], [name="descricao"]{
+    margin-right: -10px;
+}
+
+.label-produto-lado{
     margin-left: 10px;
+    max-width: 100px;
 }
 
 .nav-item {
@@ -104,4 +120,25 @@ aside img {
     text-shadow: 5px black;
 }
 
+.pesquisa-produto{
+    display: flex; 
+    width: 100%; max-width: 700px; 
+    margin: auto;
+}
+
+.input-buscar{
+    flex: 1; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-top-left-radius: 5px; 
+    border-bottom-left-radius: 5px;
+}
+
+.button-pesquisar{
+    background-color: #800080; 
+    color: white; border: none; 
+    padding: 10px 16px; 
+    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px;
+}
 

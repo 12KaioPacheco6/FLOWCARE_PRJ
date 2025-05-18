@@ -8,7 +8,12 @@
 <body>
     <header>
         <div class="logo"> 
-            <img src="../imagens/imagem-heard/Captura de tela 2025-01-20 193259.png" alt="Logo" width="160" height="50" class="logo-marca"> 
+            <img src="/FlowCare-PII/imagens/imagem-heard/Captura de tela 2025-01-20 193259.png" alt="Logo" width="160" height="50" class="logo-marca"> 
+        </div>
+
+        <div class="pesquisa-produto">
+            <input class="input-buscar" type="text" placeholder="Digite sua busca...">
+            <button class="button-pesquisar" type="submit">Buscar</button>
         </div>
 
         <div class="user-bar">
@@ -18,8 +23,7 @@
         </div>
     </header>
 
-    <main>
-        <section class="cadastro-form">
+    <div class="opcoes-catgorias"> 
             <nav>
                 <a href="#" class="nav-item">home</a>
                 <a href="#" class="nav-item">autoestima</a>
@@ -28,26 +32,32 @@
                 <a href="#" class="nav-item">revisar classificação</a>
                 <a href="#" class="nav-item">chat de dúvidas</a>
             </nav>
+    </div>
+
+    <main>
+        <section class="cadastro-form">
+
             <h2>CADASTRAR PRODUTO – PREENCHA COM AS SUAS INFORMAÇÕES</h2>
-            <form action="processa.php" method="post">
-                <label class="label-produto">Título do Produto</label>
+            <form action="processa.php" method="post" class="form-produto">
+                <label class="label-produto">Nome do Produto</label>
                 <input type="text" name="titulo" required>
 
-                <label class="label-produto">Categoria</label>
-                <select name="categoria" required >
-                    <option> Cabelo </option>
-                    <option> skinCare </option>
-                    <option> Corporal </option>
-                    <option> Perfume' </option>
-                </select>
-                
                 <label class="label-produto">Local</label>
                 <input type="text" name="local-compra" required>
 
-                <label class="label-produto">Preço</label>
-                <input type="number" step="0.01" name="preco" required>
+                <label class="label-produto">Categoria</label>
+                <select name="-select-categoria" required >
+                    <option> Cabelo </option>
+                    <option> SkinCare </option>
+                    <option> Corporal </option>
+                    <option> Perfume </option>
+                    <option> Cremes  </option>
+                </select>
+
+                <label class="label-produto-lado">Preço</label>
+                <input type="number" step="0.01" min="0" name="preco" required>
                 
-                <label class="label-produto">Descrição</label>
+                <label class="label-produto-lado">Descrição</label>
                 <input type="text" name="descricao" required>
 
                 <button type="submit">Cadastrar Produto</button>
