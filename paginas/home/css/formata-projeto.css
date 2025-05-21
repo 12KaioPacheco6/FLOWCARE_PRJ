@@ -45,9 +45,10 @@ header {
 
 .nav-link {
   text-decoration: none;
-  color: #000; /* Cor preta */
   font-weight: bold;
   font-size: 14px;
+  color: black;
+  text-shadow: 5px black;
 }
 
 .grid {
@@ -72,15 +73,11 @@ header {
   margin-bottom: 5px;
 }
 
-#divBusca {
-  background-color: #E0EEEE;
-  border: solid 2px #5F9EA0;
-  border-radius: 10px;
-  width: 300px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
+
+.pesquisa-produto{
+    display: flex; 
+    width: 100%; max-width: 700px; 
+    margin: auto;
 }
 
 #txtBusca {
