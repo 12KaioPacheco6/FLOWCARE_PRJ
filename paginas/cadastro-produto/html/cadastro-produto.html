@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Flowcare - Cadastro de Produto</title>
-    <link rel="stylesheet" href="../css/cadastro-produto.css">
+    <link rel="stylesheet" href="../cadastro-produto.css">
 </head>
 <body>
     <header>
@@ -37,9 +37,12 @@
     <main>
         <section class="cadastro-form">
             <h2>CADASTRAR PRODUTO – PREENCHA COM AS SUAS INFORMAÇÕES</h2>
-            <form action="processa.php" method="post" class="form-produto">
+            <form action="../includes/cadastrar-produto.inc.php" method="post" class="form-produto">
                 <label class="label-produto">Nome do Produto</label>
-                <input type="text" name="produto" required>
+                <input type="text" name="nome" required>
+
+                <label class="label-produto">Marca do Produto</label>
+                <input type="text" name="marca-produto" required>
 
                 <label class="label-produto">Local</label>
                 <input type="text" name="local" required>
@@ -47,15 +50,15 @@
                 <label class="label-produto">Categoria</label>
                 <select name="categoria" required>
                 <optgroup label="Beleza">
-                    <option value="Cabelo">Cabelo</option>
-                    <option value="SkinCare">SkinCare</option>
+                    <option name="cabelo" value="Cabelo">Cabelo</option>
+                    <option name="skincare" value="SkinCare">SkinCare</option>
                 </optgroup>
                 <optgroup label="Corpo">
-                    <option value="Corporal">Corporal</option>
-                    <option value="Cremes">Cremes</option>
+                    <option name="corporal" value="Corporal">Corporal</option>
+                    <option name="cremes" value="Cremes">Cremes</option>
                 </optgroup>
                 <optgroup label="Outros">
-                    <option value="Perfume">Perfume</option>
+                    <option name="perfume" value="Perfume">Perfume</option>
                 </optgroup>
                 </select>
 
@@ -66,10 +69,40 @@
                 <label class="label-produto-lado">Descrição</label>
                 <input type="text" name="descricao" required>
 
-                <button type="submit">Cadastrar Produto</button>
+                <button name="cadastrar-produto" type="submit">Cadastrar Produto</button>
             </form>
         </section>
+
+        <?php
+                require_once '../includes/banco-de-dados-produto.inc..php';
+                require_once '../includes/cadastro-produto.inc..php';
+
+                $banco = new BancoDeDados("localhost", "root", "", "flowcare", "usuario");
+                $conexao = $banco->criarConexao(); //conexao com o banco  de dados
+
+                $banco->criarBanco($conexao); // criacao de um BD
+
+                $banco->abrirBanco($conexao); // ligaçao do BD
+                $banco->definirCharset($conexao);
+
+                $banco->criarTabela($conexao);
+
+                $produto = new Produto();
+
+                if(isset($_POST["cadastrar-produto"])){
+                $nome = $_POST["nome"];
+                $marca = $_POST["marca-produto"];
+                $local = $_POST["local"];
+                $categoria = $_POST["categoria"];
+                $preco = $_POST["preco"];
+                $descricao = $_POST["descricao"];
+
+                // Chama a função para cadastrar o produto
+                cadastrarProduto($conn, $nome, $marca, $local, $categoria, $preco, $descricao);
+                }
+        ?>
     </main>
 
 </body>
 </html>
+
