@@ -9,7 +9,7 @@ class Produto
         private $preco;
         private $descricao;
 
-        private function __construct($nome, $marca, $local, $categoria, $preco, $descricao);
+        private function __construct($nome, $marca, $local, $categoria, $preco, $descricao)
         {
             $this->name = $name;
             $this->marca = $marca;

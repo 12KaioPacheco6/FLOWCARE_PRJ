@@ -30,6 +30,19 @@ class Produto
                         '$this->preco',
                         '$this->descricao')";
         $produto = $conexao->query($sql) or die ($conexao->error);
+        $vetorProduto = $produto->fetch_arry()
+
+        function mostrarProdutos($conexao){
+            $nomeProduto = $vetorProduto[0];
+            $marcaProduto = $vetorProduto[1];
+            $localProduto = $vetorProduto[2];
+            $categoriaProduto = $vetorProduto[3];
+            $precoProduto = $vetorProduto[4];
+            $descricaoProduto = $vetorProduto[5];
+
+            echo "<p> Seu produto foi Cadastrado
+                <spam> </p>"
+        }
     }
 
     function atualizarProduto($conexao)

@@ -60,6 +60,19 @@ class BancoDeDados
         $conexao->query($sql) or exit($conexao->error);
     }
 
+    function criarTabelaComentario($conexao)
+    {
+        $sql = "CREATE TABLE IF NOT EXISTS comentario (
+                id int not null auto_increment,
+                id_produto int not null,
+                comentario varchar(500) not null,
+                CONSTRAINT pk_comentario
+                  PRIMARY KEY(id),
+                CONSTRAINT fk_comentario_produto
+                  FOREIGN KEY(id_produto) REFERENCES produto (id)) engine=InnoDB";
+        $conexao->query($sql) or exit($conexao->error);
+    }
+
     function criarTabelaProduto($conexao)
     {
         $sql = "CREATE TABLE IF NOT EXISTS produto (
@@ -78,6 +91,8 @@ class BancoDeDados
                   FOREIGN KEY(id_marca) REFERENCES categoria (id)) engine=InnoDB";
         $conexao->query($sql) or exit($conexao->error);
     }
+
+    fucn
 
     function definirCharset($conexao)
     {
