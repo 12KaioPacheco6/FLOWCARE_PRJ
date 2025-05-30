@@ -3,25 +3,27 @@
 class Produto 
     {
         private $nome;
+        private $marca;
         private $local;
         private $categoria;
         private $preco;
         private $descricao;
 
-        private function __construct($nome, $local, $categoria, $preco, $descricao);
+        private function __construct($nome, $marca, $local, $categoria, $preco, $descricao)
         {
-            this->name = $name;
-            this->local = $local;
-            this->categoria = $categoria;
-            this->preco = $preco;
-            this->descricao = $descricao;
+            $this->name = $name;
+            $this->marca = $marca;
+            $this->local = $local;
+            $this->categoria = $categoria;
+            $this->preco = $preco;
+            $this->descricao = $descricao;
         }
 
-        function getId(){
-            return $this->id;
+        function getMarca(){
+            return $this->marca;
         }
-        function setId($nome){
-            $this->nome = $nome;
+        function setMarca($marca){
+            $this->marca = $marca;
         }
 
         function getNome(){
@@ -59,5 +61,4 @@ class Produto
             $this->descricao = $descricao;
         }
     }
-
 ?>

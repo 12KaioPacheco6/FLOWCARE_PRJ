@@ -2,63 +2,114 @@
 
 class BancoDeDados
 {
-    public $flowcare;
-    public $produto;
-    public $servidor;
-    public $usuario;
-    public $senha;
+    public $nome;
+    public $local;
+    public $categoria;
+    public $descricao;
+    public $preco
+   
 
     //construtor dessa classe
-    function __construct($umServidor, $umUsuario, $umaSenha, $flowcare, $produto)
+    function __construct($umServidor, $umUsuario, $umaSenha, $flowcare, $produto, $categoria, $marca)
     {
         $this->servidor = $umServidor;
         $this->usuario = $umUsuario;
         $this->senha = $umaSenha;
         $this->flowcare = $flowcare;
         $this->produto = $produto;
+        $this->categoria = $categoria;
+        $this->marca = $marca;
     }
 
-    //método que cria a ligação do código em PHP com o MySQL no servidor
     function criarConexao()
     {
-        $conexao = new mysqli($this->servidor, $this->usuario, $this->senha) or exit($conexao->error);
+        $conexao = new mysql($this->servidor, $this->usuario, $this->senha) or exit($conexao->error);
         return $conexao;
     }
 
-    //criar o banco de dados físico no servidor - este método é opcional
     function criarBanco($conexao)
     {
         $sql = "CREATE DATABASE IF NOT EXISTS $this->flowcare";
         $conexao->query($sql) or exit($conexao->error);
     }
 
-    //método para abrir o banco de dados
     function abrirBanco($conexao)
     {
-        /*$sql = "USE $this->flowcare";
-        $conexao->query($sql) or $conexao->error;*/
         $conexao->select_db($this->flowcare);
     }
 
-    //método para criar a tabela no banco de dados
-    function criarTabela($conexao)
-    {
+    function criarTabelaCategoria($conexao)
+}
+<<<<<<< HEAD
         $sql = "CREATE TABLE IF NOT EXISTS $this->produto (
-              matricula VARCHAR(20) PRIMARY KEY,
-              aluno VARCHAR(300),
-              media DECIMAL(3,1))";
+              nome  VARCHAR(20) PRIMARY KEY,
+              local VARCHAR(300),
+              categoria VARCHAR(100),
+             descricao VARCHAR(350),
+             preco DECIMAL (4,2))";
+=======
+        $sql = "CREATE TABLE $this->categoria (
+	            id int not null auto_increment not null,
+                nome varchar(200) not null,
+                    CONSTRAINT pk_categoria
+                        PRIMARY KEY(id)
+        ) engine=InnoDB";
+>>>>>>> 68c3ace5048b07b1b5fad814d37795e729e05f89
         $conexao->query($sql) or exit($conexao->error);
     }
 
-    //método para padronizar a tabela de símbolos para toda a aplicação
+    function criarTabelaMarca($conexao)
+    {
+        $sql = "CREATE TABLE IF NOT EXISTS $this->marca (
+                    id int not null auto_increment,
+                    nome varchar(200) not null,
+                    CONSTRAINT pk_marca
+                      PRIMARY KEY(id)) engine=InnoDB";
+        $conexao->query($sql) or exit($conexao->error);
+    }
+
+    function criarTabelaComentario($conexao)
+    {
+        $sql = "CREATE TABLE IF NOT EXISTS comentario (
+                id int not null auto_increment,
+                id_produto int not null,
+                comentario varchar(500) not null,
+                CONSTRAINT pk_comentario
+                  PRIMARY KEY(id),
+                CONSTRAINT fk_comentario_produto
+                  FOREIGN KEY(id_produto) REFERENCES produto (id)) engine=InnoDB";
+        $conexao->query($sql) or exit($conexao->error);
+    }
+
+    function criarTabelaProduto($conexao)
+    {
+        $sql = "CREATE TABLE IF NOT EXISTS produto (
+                id int not null auto_increment,
+                nome varchar(500) not null,
+                id_marca varchar(200) not null,
+                local varchar(500) not null,
+                id_categoria int not null,
+                preco decimal not null,
+                descricao varchar(500) not null,
+                CONSTRAINT pk_produto
+                  PRIMARY KEY(id),
+                CONSTRAINT fk_produto_categoria
+                  FOREIGN KEY(id_categoria) REFERENCES categoria (id),
+                CONSTRAINT fk_produto_marca
+                  FOREIGN KEY(id_marca) REFERENCES categoria (id)) engine=InnoDB";
+        $conexao->query($sql) or exit($conexao->error);
+    }
+
+    fucn
+
     function definirCharset($conexao)
     {
         $conexao->set_charset("utf8");
     }
 
-    //fechar a conexão com o banco
     function desconectar($conexao)
     {
         $conexao->close();
     }
+}
 }
