@@ -39,22 +39,15 @@ class BancoDeDados
     }
 
     function criarTabelaCategoria($conexao)
-}
-<<<<<<< HEAD
+    }
         $sql = "CREATE TABLE IF NOT EXISTS $this->produto (
               nome  VARCHAR(20) PRIMARY KEY,
               local VARCHAR(300),
               categoria VARCHAR(100),
              descricao VARCHAR(350),
              preco DECIMAL (4,2))";
-=======
-        $sql = "CREATE TABLE $this->categoria (
-	            id int not null auto_increment not null,
-                nome varchar(200) not null,
-                    CONSTRAINT pk_categoria
-                        PRIMARY KEY(id)
-        ) engine=InnoDB";
->>>>>>> 68c3ace5048b07b1b5fad814d37795e729e05f89
+             
+
         $conexao->query($sql) or exit($conexao->error);
     }
 
