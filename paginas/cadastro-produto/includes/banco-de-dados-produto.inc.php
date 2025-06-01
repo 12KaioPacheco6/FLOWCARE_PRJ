@@ -2,13 +2,12 @@
 
 class BancoDeDados
 {
-    public $flowcare;
-    public $produto;
+    public $nome;
+    public $local;
     public $categoria;
-    public $marca;
-    public $servidor;
-    public $usuario;
-    public $senha;
+    public $descricao;
+    public $preco
+   
 
     //construtor dessa classe
     function __construct($umServidor, $umUsuario, $umaSenha, $flowcare, $produto, $categoria, $marca)
@@ -24,7 +23,7 @@ class BancoDeDados
 
     function criarConexao()
     {
-        $conexao = new mysqli($this->servidor, $this->usuario, $this->senha) or exit($conexao->error);
+        $conexao = new mysql($this->servidor, $this->usuario, $this->senha) or exit($conexao->error);
         return $conexao;
     }
 
@@ -40,13 +39,15 @@ class BancoDeDados
     }
 
     function criarTabelaCategoria($conexao)
-    {
-        $sql = "CREATE TABLE $this->categoria (
-	            id int not null auto_increment not null,
-                nome varchar(200) not null,
-                    CONSTRAINT pk_categoria
-                        PRIMARY KEY(id)
-        ) engine=InnoDB";
+    }
+        $sql = "CREATE TABLE IF NOT EXISTS $this->produto (
+              nome  VARCHAR(20) PRIMARY KEY,
+              local VARCHAR(300),
+              categoria VARCHAR(100),
+             descricao VARCHAR(350),
+             preco DECIMAL (4,2))";
+             
+
         $conexao->query($sql) or exit($conexao->error);
     }
 
@@ -103,4 +104,5 @@ class BancoDeDados
     {
         $conexao->close();
     }
+}
 }
