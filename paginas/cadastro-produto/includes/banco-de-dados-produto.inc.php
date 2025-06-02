@@ -3,14 +3,17 @@
 class BancoDeDados
 {
     public $nome;
+    public $servidor;
+    public $usuario;
     public $local;
     public $categoria;
     public $descricao;
     public $preco
+    public $marca;
    
 
     //construtor dessa classe
-    function __construct($umServidor, $umUsuario, $umaSenha, $flowcare, $produto, $categoria, $marca)
+    function __construct($umServidor, $umUsuario, $umaSenha, $flowcare, $produto, $categoria)
     {
         $this->servidor = $umServidor;
         $this->usuario = $umUsuario;
@@ -18,7 +21,7 @@ class BancoDeDados
         $this->flowcare = $flowcare;
         $this->produto = $produto;
         $this->categoria = $categoria;
-        $this->marca = $marca;
+        $this->
     }
 
     function criarConexao()
@@ -45,7 +48,7 @@ class BancoDeDados
               local VARCHAR(300),
               categoria VARCHAR(100),
              descricao VARCHAR(350),
-             preco DECIMAL (4,2))";
+             preco DECIMAL (7,2))";
              
 
         $conexao->query($sql) or exit($conexao->error);

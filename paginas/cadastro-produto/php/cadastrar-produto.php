@@ -5,7 +5,7 @@
   
 
   //criar o objeto banco de dados que, nesse momento, armazena a conexão com o servidor, inicializando o construtor da nossa classe
-  $banco = new BancoDeDados("localhost", "root", "", "flowcare", "Cadastrar Produtos");
+  $banco = new BancoDeDados("localhost", "root", "");
 
   //criar a conexão física com o servidor MySQL
   $conexao = $banco->criarConexao();
@@ -28,10 +28,10 @@
   //para cadastrarmos o dados do objeto Cadastrar Produtos no banco, precisamos fazer com o PHP teste se o botão de cadastro foi acionado no formulário
 if(isset($_POST["cadastrar"])) {
    $produto->receberDadosDoFormulario($conexao);
-   $produto->cadastrar($conexao, $banco->nomeDaTabela);
+   $produto->cadastrar($conexao, $banco->produto);
    echo "<p> Produtos foram cadastrados com sucesso no banco de dados. </p>";
 }
 
   //após finalizar toda a execução da nossa aplicação, "matamos" a conexão com o MySQL
   $banco->desconectar($conexao);
- ?> 
+ ?>                       

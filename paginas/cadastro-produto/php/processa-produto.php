@@ -2,7 +2,6 @@
 
 class Produto
 {
-
     private $nome;
     private $marca;
     private $local;
@@ -27,7 +26,7 @@ class Produto
                         '$this->marca',
                         '$this->local',
                         '$this->categoria',
-                        '$this->preco',
+                        $this->preco,
                         '$this->descricao')";
         $produto = $conexao->query($sql) or die ($conexao->error);
         $vetorProduto = $produto->fetch_arry()
