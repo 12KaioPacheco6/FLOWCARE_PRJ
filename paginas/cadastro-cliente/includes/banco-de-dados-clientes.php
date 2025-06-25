@@ -6,13 +6,15 @@ class Produto
         private $telefone;
         private $email;
         private $senha;
+        private $confirmarSenha;
 
-        private function __construct($nome, $telefone, $email, $senha)
+        private function __construct($nome, $telefone, $email, $senha, $confirmarSenha)
         {
             $this->nome = $nome;
             $this->telefone = $telefone;
             $this->email = $email;
             $this->senha = $senha;
+            $this->confirmarSenha = $confirmarSenha;
         }
 
         function getNome(){
