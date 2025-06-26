@@ -4,7 +4,7 @@
   require_once "../includes/banco-de-dados-produto.inc.php";
   //criar o objeto banco de dados que, nesse momento, armazena a conexão com o servidor, inicializando o construtor da nossa classe
   //Passando o endereço do servidor, usuário, senha, nome do banco de dados e os nomes das tabelas que serão criadas
-  $banco = new BancoDeDados("localhost", "root", "", "flowcare", "categoria", "marca", "produto", "comentario");
+  $banco = new BancoDeDados("localhost", "root", "", "flowcare", "categoria", "marca", "produto", "comentario","cliente");
 
   //criar a conexão física com o servidor MySQL
   $conexao = $banco->criarConexao();
@@ -25,10 +25,12 @@
   $produto = new Produto();
 
   //para cadastrarmos o dados do objeto Cadastrar Produtos no banco, precisamos fazer com o PHP teste se o botão de cadastro foi acionado no formulário
-  if(isset($_POST["cadastrar-produto"])) { // Coloquei o nome do botão de cadastro do formulário, estava "cadastrar"
-    $produto->receberDadosDoFormulario($conexao);
-    $produto->cadastrar($conexao, $banco->nomeDaTabela3);
-    echo "<p> Produtos foram cadastrados com sucesso no banco de dados. </p>";
+  if(isset($_POST["cadastrar-produto"])) {
+      $produto->receberDadosDoFormulario($conexao);
+      $produto->cadastrar($conexao, $banco->nomeDaTabela3);
+  }
+  else {
+      $mensagem = "Erro ao cadastrar o produto. Por favor, tente novamente.";
   }
 
   //após finalizar toda a execução da nossa aplicação, "matamos" a conexão com o MySQL

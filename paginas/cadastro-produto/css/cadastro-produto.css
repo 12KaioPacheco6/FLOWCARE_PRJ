@@ -97,22 +97,22 @@ aside img {
     border-radius: 8px;
 }
 
-.form-produto{
+.form-cliente{
     width: 80%;
     margin: 5px;
     margin-bottom: 10px;
     display: inline-block;
 }
 
-.opcoes-categorias{
+.opcoes-clientes{
     margin-top: 5px;
     text-align: center;
     padding: 15px;
 }
 
-input[name="titulo"], [name="local-compra"], [name="descricao"]{
+/*input[name="titulo"], [name="local-compra"], [name="descricao"]{
     margin: 10px;
-}
+}*/
 
 .label-produto-lado{
     margin-left: 10px;

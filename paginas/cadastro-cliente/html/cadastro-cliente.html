@@ -38,12 +38,12 @@
     <main>
         <section class="cadastro-form">
             <h2>CADASTRAR CLIENTE – PREENCHA COM AS SUAS INFORMAÇÕES</h2>
-            <form action="../php/processa-cliente.php" method="post" class="form-cliente">
+            <form action="../php/cadastrar-cliente.php" method="post" class="form-cliente">
                 <label class="label-cliente">Nome Completo</label>
-                <input type="text" name="nome-completo" required>
+                <input type="text" name="nome-usuario" required>
 
                 <label class="label-cliente">Telefone</label>
-                <input type="tel" name="numero-de-telefone" required>
+                <input type="tel" name="telefone" required>
 
                 <label class="label-cliente">Email</label>
                 <input type="email" name="email" id="email" required>
@@ -52,8 +52,7 @@
                <input type="password" name="senha" id="senha" required>
 
                 <label class="label-cliente">Confirme sua Senha</label>
-               <input type="password" name="confirmacao-de-senha" id="senha" required>
-
+               <input type="password" name="confirmacao-senha" id="confirmacao-senha" required>
 
                 <button name="cadastrar-cliente" type="submit">Cadastrar Cliente</button>
             </form>
