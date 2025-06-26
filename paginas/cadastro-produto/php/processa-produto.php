@@ -2,7 +2,6 @@
 
 class Produto
 {
-
     private $nome;
     private $marca;
     private $local;
@@ -24,10 +23,10 @@ class Produto
     {
         $sql = "INSERT INTO $produto VALUES (
                         '$this->nome',
-                         $this->marca,
+                        '$this->marca',
                         '$this->local',
                         '$this->categoria',
-                        '$this->preco',
+                        $this->preco,
                         '$this->descricao')";
         $produto = $conexao->query($sql) or die ($conexao->error);
         $vetorProduto = $produto->fetch_arry()
@@ -40,14 +39,13 @@ class Produto
             $precoProduto = $vetorProduto[4];
             $descricaoProduto = $vetorProduto[5];
 
-            echo "<p> Seu produto foi Cadastrado
-                <spam> </p>"
+            echo "<p> Seu produto foi Cadastrado. </p>"
         }
     }
 
     function atualizarProduto($conexao)
     {
-        $sql = "UPDATE $produto SET $this->nome = '$this->nome', local = '$this->local', categoria = '$this->categoria', 
+        $sql = "UPDATE $produto SET nome = '$this->nome', local = '$this->local', categoria = '$this->categoria', 
                  $this->preco = '$this->preco', $this->descricao = '$this->descricao' 
                  WHERE id_categoria = $this->categoria";
         $produto = $conexao->query($sql) or die ($conexao->error);
