@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #FFB4A2;
+}
+
+.logo-marca{
+  border-radius: 55px;
+}
+
+header {
+  padding: 10px;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-principal {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav-cadastro {
+  color:#000 !important;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  color: black;
+  text-shadow: 5px black;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 4fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.item {
+  background-color: #ffdfd5;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.item img {
+  max-width: 80px;
+  height: auto;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+
+.pesquisa-produto{
+    display: flex; 
+    width: 100%; max-width: 700px; 
+    margin: auto;
+}
+
+#txtBusca {
+  background-color: transparent;
+  font-size: 18px;
+  border: none;
+  width: 100%;
+}
+
+.user-bar {
+  font-size: 14px;
+  text-align: right;
+  margin-right: 5px;
+}
+
