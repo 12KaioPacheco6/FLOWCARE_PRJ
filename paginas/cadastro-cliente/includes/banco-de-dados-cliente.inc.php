@@ -12,6 +12,7 @@ class BancoDeDados
     public $servidor;
     public $usuario;
     public $senha;
+
     /* 
         public $nome;
         public $servidor;
@@ -22,7 +23,6 @@ class BancoDeDados
         public $preco;
         public $marca;
     */ 
-   
 
     //construtor dessa classe 
     function __construct($umServidor, $umUsuario, $umaSenha, $umBanco, $umaTabela1, $umaTabela2, $umaTabela3, $umaTabela4, $umaTabela5){
