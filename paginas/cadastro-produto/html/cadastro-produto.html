@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Flowcare - Cadastro de Produto</title>
+    <link rel="stylesheet" href="../css/cadastro-produto.css">
+</head>
+<body>
+    <header>
+            <div class="logo-header">
+                <img src="/imagens/imagem-heard/Captura de tela 2025-01-20 193259.png" alt="Logo" width="160" height="50" class="logo-marca-header">
+                <div class="logo-texto-header">
+                    <h1>Flowcare</h1>
+                    <p>O seu guia de beleza</p>
+                </div>
+            </div>
+
+            <form action="buscar-produto.php" method="post">
+                <div class="pesquisa-produto">
+                    <input class="input-buscar" type="text" placeholder="Digite sua busca...">
+                    <button name="busca-produto" class="button-pesquisar" type="submit">Buscar</button>
+                </div>
+            </form>
+
+            <div class="user-bar">
+                <a href="#">entrar</a> | 
+                <a href="#">sacola</a> | 
+                <a href="#">registrar produto</a>
+            </div>
+    </header>
+
+    <div class="opcoes-categorias"> 
+            <nav>
+                <a href="#" class="nav-item">home</a>
+                <a href="#" class="nav-item">autoestima</a>
+                <a href="#" class="nav-item">cabelo</a>
+                <a href="#" class="nav-item">skincare</a>
+                <a href="#" class="nav-item">revisar classificação</a>
+                <a href="#" class="nav-item">chat de dúvidas</a>
+            </nav>
+    </div>
+
+    <main>
+        <section class="cadastro-form">
+            <h2> CADASTRAR PRODUTO – PREENCHA COM AS SUAS INFORMAÇÕES </h2>
+            <form action="../php/cadastrar-produto.php" method="post" class="form-produto">
+                <label class="label-produto">Nome do Produto</label>
+                <input type="text" name="nome" required>
+
+                <label class="label-produto">Marca do Produto</label>
+                <!-- Mudei o "name" -->
+                <select name="marca">
+                    <optgroup name="marca-produto">
+                        <option>Elseve</option>
+                        <option>SalonLine</option>
+                        <option>Oboticario</option>
+                        <option>Eudora</option>
+                        <option>Cryme</option>
+                    </optgroup>
+                </select>
+
+                <label class="label-produto">Local</label>
+                <input type="text" name="local" required>
+
+                <label class="label-produto">Categoria</label>
+                <select name="categoria" required>         
+                <optgroup label="Beleza">
+                    <option name="cabelo" value="Cabelo">Cabelo</option>
+                    <option name="skincare" value="SkinCare">SkinCare</option>
+                </optgroup>
+                <optgroup label="Corpo">
+                    <option name="corporal" value="Corporal">Corporal</option>
+                    <option name="cremes" value="Cremes">Cremes</option>
+                </optgroup>
+                <optgroup label="Outros">
+                    <option name="perfume" value="Perfume">Perfume</option>
+                </optgroup>
+                </select>
+
+
+                <label class="label-produto-lado">Preço</label>
+                <input type="number" step="0.01" min="0" name="preco" required>
+                
+                <label class="label-produto-lado">Descrição</label>
+                <input type="text" name="descricao" required>
+
+                <button name="cadastrar-produto" type="submit">Cadastrar Produto</button>
+            </form>
+        </section>
+
+    </main>
+
+
+</body>
+</html>
+
