@@ -106,7 +106,7 @@ $banco->fecharBanco($conexao);
                     </form>
                 </div>
             </div>
-        </div>
+        </div>w
     </nav>
 </header>
 

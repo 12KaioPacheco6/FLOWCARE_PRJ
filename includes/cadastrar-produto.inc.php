@@ -72,22 +72,27 @@ class Produto
         }
         return null;
     }
-    
-    // NOVO MÉTODO: Listar comentários para um produto específico
+
     public function listarComentariosPorProduto($conexao, $tabelaComentario, $tabelaCliente, $id_produto) {
-        $sql = "SELECT c.comentario, c.data_comentario, cli.nome AS nome_cliente
+        $sql = "SELECT c.id AS id_comentario, c.comentario, c.data_comentario, cl.id AS id_cliente, cl.nome AS nome_cliente 
                 FROM " . $tabelaComentario . " c
-                JOIN " . $tabelaCliente . " cli ON c.id_cliente = cli.id
+                JOIN " . $tabelaCliente . " cl ON c.id_cliente = cl.id
                 WHERE c.id_produto = ?
-                ORDER BY c.data_comentario DESC"; // Ordenar pelos mais recentes
+                ORDER BY c.data_comentario DESC";
 
         $stmt = mysqli_prepare($conexao, $sql);
+
         if ($stmt) {
             mysqli_stmt_bind_param($stmt, "i", $id_produto);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
-            return $result; // Retorna o objeto mysqli_result
+            mysqli_stmt_close($stmt);
+            return $result;
+        } else {
+            error_log("Erro ao preparar consulta de comentários: " . mysqli_error($conexao));
+            return false;
         }
-        return null;
     }
+
 }
+?>
