@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #fbe7dd;
+    background-color: #f5a98c;
 }
 
 header {
@@ -10,7 +10,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: rgb(255, 255, 255);
     flex-wrap: wrap;
 }
 
